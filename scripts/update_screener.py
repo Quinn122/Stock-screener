@@ -149,7 +149,8 @@ def fetch_fundamentals(symbols):
 def main():
     symbols = load_symbols()
     print(f"{len(symbols)} symbols")
-
+    print("key starts with:", SERVICE_KEY[:10])
+    
     bars, loaded = fetch_bars(symbols)
     print(f"{len(bars)} bar rows for {loaded} symbols")
     upsert("screener_price_bars", bars, "symbol,date")
